@@ -1,0 +1,21 @@
+#!/bin/bash
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias home="cd ~"
+
+# Ip addresses
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ip addr | grep -Eo 'inet ([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+
+
+# confirm before overwritting something
+alias cp="cp -i"
+# list mounted disks with human-readable sizes
+alias df="df -h"
+
+
+
+
