@@ -1,6 +1,0 @@
-#!/bin/sh
-
-
-# symlinks
-
-ln -s ~/dot-monkey/.zshrc ~/.zshrc
