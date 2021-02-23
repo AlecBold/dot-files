@@ -19,6 +19,15 @@ apt_progs=(
        	tree
 )
 
+command_exists() {
+	command -v "$@" >/dev/null 2>&1
+}
+
+create_file() {
+	if [ ! -f "$HOME/$1" ]; then
+		touch "$HOME/$1"
+	fi
+}
 
 setup_color() {
 	# Only use colors if connected to a terminal
@@ -104,16 +113,10 @@ install_repo() {
 	}
 }
 
-run_others_sh() {
-	${DOT_ROOT}/scripts/funcs.sh
-}
-
 main() {
 	setup_color
 
 	install_repo
-	run_others_sh
-
 	install_apt_programs
 
 	configure_symlinks
