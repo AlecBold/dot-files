@@ -2,6 +2,7 @@
 
 set -e
 
+SHELL_DES=/bin/zsh
 DOT_ROOT=~/dot-files
 REPO="AlecBold/dot-files"
 REMOTE="https://github.com/${REPO}"
@@ -94,10 +95,10 @@ switch_shell() {
 		exit 1
 	fi
 
-	if ! chsh -s /bin/zsh; then
+	if ! chsh -s $SHELL_DES; then
 		echo "${RED}chsh was unsuccessful${RESET}"
 	else
-		export SHELL=/bin/zsh
+		export SHELL=$SHELL_DES
 		echo "${GREEN}shell succesfully changed to zsh${RESET}"
 	fi
 }
