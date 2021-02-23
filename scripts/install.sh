@@ -51,19 +51,21 @@ EOF
 	sudo apt-get -qq update && sudo apt-get -qq -y upgrade
 	echo "finished"
 
-	echo "running [apt-get install]. It take some time..."
-	for prog in ($apt_progs); do
-		if ! command_exists ${prog}; then
-			echo "${YELLOW}[${prog}]${RESET} installing..."
-			sudo apt-get -qq -y install ${prog} || {
-				echo "${RED}[${prog}] failed${RESET}"
-			}
-		else
-			echo "${BLUE}[${prog}]${RESET} already exist"
-		fi
-	done
-
-	echo "finished"
+	read -p "Install -> [${apt_progs}]? [Y, n]: " input
+	if [ $input == "y" || $input == "n" ]; then
+		echo "running [apt-get install]. It take some time..."
+		for prog in ($apt_progs); do
+			if ! command_exists ${prog}; then
+				echo "${YELLOW}[${prog}]${RESET} installing..."
+				sudo apt-get -qq -y install ${prog} || {
+					echo "${RED}[${prog}] failed${RESET}"
+				}
+			else
+				echo "${BLUE}[${prog}]${RESET} already exist"
+			fi
+		done
+		echo "finished"
+	fi
 }
 
 configure_symlinks() {
