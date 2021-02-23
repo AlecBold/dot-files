@@ -2,12 +2,22 @@
 
 set -e
 
-DOT_ROOT=~/dot-files
-REPO=AlecBold/dot-files
-BRANCH=master
-REMOTE=https://github.com/${REPO}
+DOT_ROOT="~/dot-files"
+REPO="AlecBold/dot-files"
+BRANCH="master"
+REMOTE="https://github.com/${REPO}"
 
-apt_progs=(firefox htop adb git zsh chromium-browser vim python tree)
+apt_progs=(
+	firefox
+       	htop
+       	adb
+       	git
+       	zsh
+       	chromium-browser
+       	vim
+       	python
+       	tree
+)
 
 
 
