@@ -86,7 +86,7 @@ configure_symlinks() {
 		if [ -f "~/${file}" ]; then
 			echo "${YELLOW}~/${file} already exist, cant create symlink"
 		else
-			ln -s $DOT_ROOT/${file} "~/${file}"
+			ln -s $DOT_ROOT/${file} ~/${file}
 			echo "${GREEN}${DOT_ROOT}/${file} -> ~/${file}"
 		fi
 	done
