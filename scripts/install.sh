@@ -20,7 +20,6 @@ apt_progs=(
 )
 
 
-
 setup_color() {
 	# Only use colors if connected to a terminal
 	if [ -t 1 ]; then
@@ -54,7 +53,7 @@ EOF
 	read -p "Install -> [${apt_progs}]? [Y, n]: " input
 	if [ $input == "y" || $input == "n" ]; then
 		echo "running [apt-get install]. It take some time..."
-		for prog in ($apt_progs); do
+		for prog ($apt_progs); do
 			if ! command_exists ${prog}; then
 				echo "${YELLOW}[${prog}]${RESET} installing..."
 				sudo apt-get -qq -y install ${prog} || {
