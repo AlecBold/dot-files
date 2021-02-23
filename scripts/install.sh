@@ -94,10 +94,10 @@ switch_shell() {
 		exit 1
 	fi
 
-	if ! chsh -s "/usr/bin/zsh"; then
+	if ! chsh -s /bin/zsh; then
 		echo "${RED}chsh was unsuccessful${RESET}"
 	else
-		export SHELL="/usr/bin/zsh"
+		export SHELL=/bin/zsh
 		echo "${GREEN}shell succesfully changed to zsh${RESET}"
 	fi
 }
@@ -122,8 +122,7 @@ main() {
 	configure_symlinks
 	switch_shell
 
-
-	cat <<"EOF"
+cat <<"EOF"
  _       __     __                             ______         ________
 | |     / /__  / /________  ____ ___  ___     /_  __/___     /_  __/ /_  ___
 | | /| / / _ \/ / ___/ __ \/ __ `__ \/ _ \     / / / __ \     / / / __ \/ _ \
