@@ -60,7 +60,7 @@ EOF
 
 	echo "Will install -> (${apt_progs[@]})"
 	read -p "Install? [Y, n]: " input
-	if [ $input = "y" || $input = "Y" ]; then
+	if [[ $input == "y" || $input == "Y" ]]; then
 		echo "running [apt-get install]. It take some time..."
 		for prog in "${apt_progs[@]}"; do
 			if ! command_exists ${prog}; then
@@ -80,7 +80,7 @@ configure_symlinks() {
 	if [ -f ~/.zshrc ]; then
 		echo "${YELLOW}~/.zshrc already exist, cant create symlink${RESET}"
 		read -p "Continue? [y, n]: " input
-		if [ $input != "y" && $input != "Y" ]; then
+		if [[ $input != "y" && $input != "Y" ]]; then
 			exit 1
 		fi
 	else
