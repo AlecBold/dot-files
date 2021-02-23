@@ -83,11 +83,11 @@ configure_symlinks() {
 	       	.gitconfig
 	)
 	for file in "${symlink_files[@]}"; do
-		if [ -f "~/${file}" ]; then
-			echo "${YELLOW}~/${file} already exist, cant create symlink"
+		if [ -f ~/${file} ]; then
+			echo "${YELLOW}~/${file} already exist, cant create symlink${RESET}"
 		else
 			ln -s $DOT_ROOT/${file} ~/${file}
-			echo "${GREEN}${DOT_ROOT}/${file} -> ~/${file}"
+			echo "${GREEN}${DOT_ROOT}/${file} -> ~/${file}${RESET}"
 		fi
 	done
 }
