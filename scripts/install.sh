@@ -58,7 +58,8 @@ EOF
 	sudo apt-get -qq update && sudo apt-get -qq -y upgrade
 	echo "finished"
 
-	read -p "Install -> ${apt_progs[@]}? [Y, n]: " input
+	echo "Will install -> (${apt_progs[@]})"
+	read -p "Install? [Y, n]: " input
 	if [ $input == "y" || $input == "n" ]; then
 		echo "running [apt-get install]. It take some time..."
 		for prog in "${apt_progs[@]}"; do
