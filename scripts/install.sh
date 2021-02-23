@@ -78,15 +78,18 @@ EOF
 }
 
 configure_symlinks() {
-	if [ -f ~/.zshrc ]; then
-		echo "${YELLOW}~/.zshrc already exist, cant create symlink${RESET}"
-		read -p "Continue? [y, n]: " input
-		if [[ $input != "y" && $input != "Y" ]]; then
-			exit 1
+	symlink_files=(
+		.zshrc
+	       	.gitconfig
+	)
+	for file in "${symlink_files[@]}"; do
+		if [ -f "~/${file}" ]; then
+			echo "${YELLOW}~/${file} already exist, cant create symlink"
+		else
+			ln -s $DOT_ROOT/${file} "~/${file}"
+			echo "${GREEN}${DOT_ROOT}/${file} -> ~/${file}"
 		fi
-	else
-		ln -s $DOT_ROOT/.zshrc ~/.zshrc
-	fi
+	done
 }
 
 switch_shell() {

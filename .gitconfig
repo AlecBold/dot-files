@@ -1,0 +1,11 @@
+[user]
+	name = Alex Max
+	email = alecbold@yandex.ru
+	username = AlecBold
+[diff]
+	tool=vimdiff
+
+[credentials]
+	helper = cache --timeout=1800
+[color]
+	ui = auto
