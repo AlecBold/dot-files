@@ -1,7 +1,5 @@
-# dot-files [not ready]
+Just dot-files [not ready]
 
-### setup
+Setup
 
-```sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/AlecBold/dot-files/master/scripts/install.sh)"
-```
